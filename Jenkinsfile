@@ -40,17 +40,6 @@ pipeline {
                 sh 'mvn checkstyle:checkstyle'
             }
         }
-         stage('SonarQube Analysis'){
-            steps {
-                withSonarQubeEnv('sonarqube') {
-                    sh 'mvn sonar:sonar'
-                }
-            }
-        }
-         stage('Publish to Nexus') {
-            steps {
-                sh 'mvn deploy -s settings.xml'
-            }
-        }
+         
     }
 }
