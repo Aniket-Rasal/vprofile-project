@@ -65,9 +65,9 @@ pipeline {
         }
         stage('quality gate') {
             steps {
-                timeout(time: 5, unit: 'MINUTES') {
-                waitForQualityGate()
-  }
+                timeout(time: 2, unit: 'MINUTES') {
+                    waitForQualityGate 
+                }
             }
         }
         stage("UploadArtifact"){
